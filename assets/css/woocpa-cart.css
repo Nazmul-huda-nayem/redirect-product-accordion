@@ -1,0 +1,66 @@
+#woocpa-cart-container {
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.woocpa-cart-item {
+    display: flex;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+}
+
+.woocpa-cart-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.woocpa-cart-item-image {
+    width: 80px;
+    margin-right: 15px;
+}
+
+.woocpa-cart-item-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.woocpa-cart-item-details {
+    flex: 1;
+}
+
+.woocpa-cart-item-details h4 {
+    margin: 0 0 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.woocpa-cart-item-price,
+.woocpa-cart-item-quantity,
+.woocpa-cart-item-total {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.woocpa-cart-summary {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid #eee;
+}
+
+.woocpa-cart-count,
+.woocpa-cart-total {
+    font-size: 16px;
+    color: #333;
+    margin: 5px 0;
+    text-align: right;
+}
+
+.woocpa-cart-total {
+    font-weight: bold;
+    color: #000;
+}

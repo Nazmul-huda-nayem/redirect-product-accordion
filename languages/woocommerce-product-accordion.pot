@@ -1,0 +1,666 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: WooCommerce Product Accordion\n"
+"POT-Creation-Date: 2022-12-29 08:07+0600\n"
+"PO-Revision-Date: 2022-12-29 08:07+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: woocommerce-product-accordion.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: page-settings/woocpa-accordion-manager.php:21
+msgid "New Tab"
+msgstr ""
+
+#: page-settings/woocpa-accordion-manager.php:32
+msgid "Settings"
+msgstr ""
+
+#: page-settings/woocpa-accordion-manager.php:40
+#: page-settings/woocpa-accordion-manager.php:42
+#: widgets/woocpa-accordion.php:426 widgets/woocpa-accordion.php:547
+msgid "Title"
+msgstr ""
+
+#: widgets/template/the-styls-here.php:32
+msgid "No Feature Image"
+msgstr ""
+
+#: widgets/template/the-styls-here.php:102
+msgid "You don't have any products. Please add your products."
+msgstr ""
+
+#: widgets/woocpa-accordion.php:12
+msgid "WooCommerceProductAccordion"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+#. Description of the plugin/theme
+#: widgets/woocpa-accordion.php:16 woocommerce-product-accordion.php:72
+#: woocommerce-product-accordion.php:86 woocommerce-product-accordion.php:101
+#: woocpa-accordion-boots.php:53
+msgid "WooCommerce Product Accordion"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:31
+msgid "Layout"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:38
+msgid "Choose Style"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:42
+msgid "Style 1"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:43
+msgid "Style 2"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:44
+msgid "Style 3"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:45
+msgid "Style 4"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:46
+msgid "Style 5"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:47
+msgid "Style 6"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:48
+msgid "Style 7"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:49
+msgid "Style 8"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:50
+msgid "Style 9"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:51
+msgid "Style 10"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:52
+msgid "Style 11"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:53
+msgid "Style 12"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:54
+msgid "Style 13"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:55
+msgid "Style 14"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:56
+msgid "Style 15"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:57
+msgid "Style 16"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:58
+msgid "Style 17"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:59
+msgid "Style 18"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:60
+msgid "Style 19"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:61
+msgid "Style 20"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:62
+msgid "Style 21"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:63
+msgid "Style 22"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:64
+msgid "Style 23"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:65
+msgid "Style 24"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:66
+msgid "Style 25"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:67
+msgid "Style 26"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:68
+msgid "Style 27"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:69
+msgid "Style 28"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:70
+msgid "Style 29"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:71
+msgid "Style 30"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:72
+msgid "Style 31"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:81
+msgid "Product Settings"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:88 widgets/woocpa-accordion.php:281
+#: widgets/woocpa-accordion.php:306 widgets/woocpa-accordion.php:689
+msgid "Icon"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:90 widgets/woocpa-accordion.php:129
+#: widgets/woocpa-accordion.php:163 widgets/woocpa-accordion.php:174
+#: widgets/woocpa-accordion.php:185 widgets/woocpa-accordion.php:207
+#: widgets/woocpa-accordion.php:232 widgets/woocpa-accordion.php:267
+#: widgets/woocpa-accordion.php:450
+msgid "Show"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:91 widgets/woocpa-accordion.php:130
+#: widgets/woocpa-accordion.php:164 widgets/woocpa-accordion.php:175
+#: widgets/woocpa-accordion.php:186 widgets/woocpa-accordion.php:208
+#: widgets/woocpa-accordion.php:233 widgets/woocpa-accordion.php:268
+#: widgets/woocpa-accordion.php:451
+msgid "Hide"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:99
+msgid "Collapsed Icon"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:113
+msgid "Expand Icon"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:127
+msgid "Short Description"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:138
+msgid "Word Length"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:149
+msgid "Word Trim Indicator"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:151
+msgid "......"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:161 widgets/woocpa-accordion.php:427
+#: widgets/woocpa-accordion.php:1371
+msgid "Price"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:172
+msgid "Publish Date"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:183 widgets/woocpa-accordion.php:2014
+msgid "Review"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:194
+msgid "Star Number"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:205
+msgid "Total Sale"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:216 widgets/woocpa-accordion.php:241
+msgid "Label"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:218
+msgid "Total Sale:-"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:230
+msgid "Product Type"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:243
+msgid "Type:-"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:257
+msgid "Product Action"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:265
+msgid "Cart Status"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:276
+msgid "Select Type"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:280
+msgid "Text"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:291
+msgid "Cart Button"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:293
+msgid "Add To Cart"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:322
+msgid "Product Query"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:329
+msgid "Product Per Page"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:332 widgets/woocpa-accordion.php:410
+#: widgets/woocpa-accordion.php:411
+msgid "00"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:345
+msgid "Choose Author"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:353 widgets/woocpa-accordion.php:429
+#: widgets/woocpa-accordion.php:1752
+msgid "Date"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:357 widgets/woocpa-accordion.php:385
+#: widgets/woocpa-accordion.php:424 widgets/woocpa-accordion.php:499
+msgid "All"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:358
+msgid "Today"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:359
+msgid "Current Month"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:360
+msgid "Custom"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:367
+msgid "Type 4 Digit Year Only"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:369
+msgid "2022"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:370
+msgid "Type Your Year Only"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:380
+msgid "Select Month"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:386
+msgid "Jan"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:387
+msgid "Feb"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:388
+msgid "Mar"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:389
+msgid "Apr"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:390
+msgid "May"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:391
+msgid "Jun"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:392
+msgid "Jul"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:393
+msgid "Aug"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:394
+msgid "Sep"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:395
+msgid "Oct"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:396
+msgid "Nov"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:397
+msgid "Dec"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:407
+msgid "Day Only (Date)"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:420
+msgid "Order By"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:425
+msgid "Author"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:428
+msgid "ID"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:436
+msgid "Order"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:440
+msgid "Descending"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:441
+msgid "Ascending"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:448 widgets/woocpa-accordion.php:1240
+msgid "Category"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:483
+msgid "Display Category Select"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:485 widgets/woocpa-accordion.php:489
+msgid "Select Category"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:495
+msgid "Products Filter By"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:500
+msgid "By Category"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:501
+msgid "By Tag"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:508
+msgid "Filter Categories"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:527
+msgid "Filter Tag"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:554
+msgid "Title Alignment"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:559
+msgid "Left"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:563
+msgid "Center"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:567
+msgid "Right"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:581 widgets/woocpa-accordion.php:703
+#: widgets/woocpa-accordion.php:838 widgets/woocpa-accordion.php:967
+#: widgets/woocpa-accordion.php:1078 widgets/woocpa-accordion.php:1254
+#: widgets/woocpa-accordion.php:1394 widgets/woocpa-accordion.php:1513
+#: widgets/woocpa-accordion.php:1635 widgets/woocpa-accordion.php:1766
+#: widgets/woocpa-accordion.php:1897
+msgid "Normal"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:595 widgets/woocpa-accordion.php:726
+#: widgets/woocpa-accordion.php:981 widgets/woocpa-accordion.php:1092
+#: widgets/woocpa-accordion.php:1268 widgets/woocpa-accordion.php:1408
+#: widgets/woocpa-accordion.php:1527 widgets/woocpa-accordion.php:1649
+#: widgets/woocpa-accordion.php:1780 widgets/woocpa-accordion.php:1911
+#: widgets/woocpa-accordion.php:2052 widgets/woocpa-accordion.php:2077
+msgid "Color"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:605 widgets/woocpa-accordion.php:640
+#: widgets/woocpa-accordion.php:736 widgets/woocpa-accordion.php:780
+#: widgets/woocpa-accordion.php:846 widgets/woocpa-accordion.php:912
+#: widgets/woocpa-accordion.php:991 widgets/woocpa-accordion.php:1026
+#: widgets/woocpa-accordion.php:1102 widgets/woocpa-accordion.php:1145
+#: widgets/woocpa-accordion.php:1278 widgets/woocpa-accordion.php:1313
+#: widgets/woocpa-accordion.php:1418 widgets/woocpa-accordion.php:1453
+#: widgets/woocpa-accordion.php:1537 widgets/woocpa-accordion.php:1572
+#: widgets/woocpa-accordion.php:1659 widgets/woocpa-accordion.php:1694
+#: widgets/woocpa-accordion.php:1790 widgets/woocpa-accordion.php:1825
+#: widgets/woocpa-accordion.php:1921 widgets/woocpa-accordion.php:1956
+#: widgets/woocpa-accordion.php:2101
+msgid "Background"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:616 widgets/woocpa-accordion.php:747
+#: widgets/woocpa-accordion.php:904 widgets/woocpa-accordion.php:1002
+#: widgets/woocpa-accordion.php:1121 widgets/woocpa-accordion.php:1289
+#: widgets/woocpa-accordion.php:1429 widgets/woocpa-accordion.php:1548
+#: widgets/woocpa-accordion.php:1670 widgets/woocpa-accordion.php:1801
+#: widgets/woocpa-accordion.php:1932
+msgid "Hover"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:630 widgets/woocpa-accordion.php:770
+#: widgets/woocpa-accordion.php:1016 widgets/woocpa-accordion.php:1135
+#: widgets/woocpa-accordion.php:1303 widgets/woocpa-accordion.php:1443
+#: widgets/woocpa-accordion.php:1562 widgets/woocpa-accordion.php:1684
+#: widgets/woocpa-accordion.php:1815 widgets/woocpa-accordion.php:1946
+msgid "Hover Color"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:653 widgets/woocpa-accordion.php:870
+#: widgets/woocpa-accordion.php:937 widgets/woocpa-accordion.php:1167
+#: widgets/woocpa-accordion.php:1336 widgets/woocpa-accordion.php:1489
+#: widgets/woocpa-accordion.php:1608 widgets/woocpa-accordion.php:1717
+#: widgets/woocpa-accordion.php:1848 widgets/woocpa-accordion.php:1979
+msgid "Border Radius"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:665 widgets/woocpa-accordion.php:802
+#: widgets/woocpa-accordion.php:892 widgets/woocpa-accordion.php:1039
+#: widgets/woocpa-accordion.php:1179 widgets/woocpa-accordion.php:1347
+#: widgets/woocpa-accordion.php:1466 widgets/woocpa-accordion.php:1585
+#: widgets/woocpa-accordion.php:1728 widgets/woocpa-accordion.php:1859
+#: widgets/woocpa-accordion.php:1990 widgets/woocpa-accordion.php:2136
+msgid "Padding"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:676 widgets/woocpa-accordion.php:813
+#: widgets/woocpa-accordion.php:881 widgets/woocpa-accordion.php:1051
+#: widgets/woocpa-accordion.php:1190 widgets/woocpa-accordion.php:1358
+#: widgets/woocpa-accordion.php:1478 widgets/woocpa-accordion.php:1597
+#: widgets/woocpa-accordion.php:1739 widgets/woocpa-accordion.php:1870
+#: widgets/woocpa-accordion.php:2001 widgets/woocpa-accordion.php:2125
+msgid "Margin"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:710 widgets/woocpa-accordion.php:754
+#: widgets/woocpa-accordion.php:2036
+msgid "Icon Size"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:794 widgets/woocpa-accordion.php:863
+#: widgets/woocpa-accordion.php:930 widgets/woocpa-accordion.php:1113
+#: widgets/woocpa-accordion.php:1156 widgets/woocpa-accordion.php:1328
+#: widgets/woocpa-accordion.php:1709 widgets/woocpa-accordion.php:1840
+#: widgets/woocpa-accordion.php:1971
+msgid "Border"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:826
+msgid "Content Style"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:855 widgets/woocpa-accordion.php:922
+msgid "Box Shadow"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:953
+msgid "Description"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:1064
+msgid "Action Style"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:1203
+msgid "Image Style"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:1210
+msgid "Thumbnail Size"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:1227
+msgid "Image Radius"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:1381
+msgid "New Price"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:1502
+msgid "Old Price"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:1621
+msgid "Sale"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:1883
+msgid "Type"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:2029
+msgid "Icons"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:2063
+msgid "Number"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:2093
+msgid "Box Style"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:2109
+msgid "Item Gap"
+msgstr ""
+
+#: widgets/woocpa-accordion.php:2248
+msgid "May be you are not installed/activated WooCommerce plugin."
+msgstr ""
+
+#: woocommerce-product-accordion.php:71
+#, php-format
+msgid "\"%1$s\" requires \"%2$s\" to be installed and activated."
+msgstr ""
+
+#: woocommerce-product-accordion.php:73 woocommerce-product-accordion.php:87
+msgid "Elementor"
+msgstr ""
+
+#: woocommerce-product-accordion.php:76 woocommerce-product-accordion.php:91
+#: woocommerce-product-accordion.php:106
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: woocommerce-product-accordion.php:85 woocommerce-product-accordion.php:100
+#, php-format
+msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
+msgstr ""
+
+#: woocommerce-product-accordion.php:102
+msgid "PHP"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://bestwpdeveloper.com/woocommerce-product-accordion"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Best WP Developer"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://bestwpdeveloper.com/"
+msgstr ""
