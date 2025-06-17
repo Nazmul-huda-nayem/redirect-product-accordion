@@ -5,21 +5,51 @@ jQuery(document).ready(function($) {
     // Handle variation selection
     $(document).on('change', '.woocpa-variation-select', function() {
         const select = $(this);
+        const productId = select.data('product-id');
         const productContainer = select.closest('.woocpa-Accordion-default');
         const addToCartBtn = productContainer.find('.woocpa-add-variation');
         const selectedOption = select.find(':selected');
-        
+        const priceDisplay = $('#price-display-' + productId);
+        const descDisplay = $('#desc-display-' + productId);
+        console.log(woocpa_ajax.currency_symbol);
         if (select.val()) {
             const variationId = select.val();
             const variationPrice = selectedOption.data('price');
+            const variationDescription = selectedOption.data('description');
+            console.log(variationDescription);
+
             
+            // Update add to cart button
             addToCartBtn.prop('disabled', false)
                       .data('variation-id', variationId)
                       .data('product-price', variationPrice);
+            
+            // Update price display
+            priceDisplay.find('.price-range').hide();
+            priceDisplay.find('.selected-price').show().html('Price: ' + woocpa_ajax.currency_symbol + parseFloat(variationPrice).toFixed(2) + '');
+            
+            // Update description if variation has one
+            if (variationDescription && variationDescription.trim() !== '') {
+                descDisplay.find('.woocpa-prodDesc').hide();
+                descDisplay.find('.variation-desc').show().text(variationDescription);
+            } else {
+                descDisplay.find('.variation-desc').hide();
+                descDisplay.find('.woocpa-prodDesc').show();
+            }
+            
         } else {
+            // Reset to default state
             addToCartBtn.prop('disabled', true)
                       .removeData('variation-id')
                       .removeData('product-price');
+            
+            // Show price range again
+            priceDisplay.find('.selected-price').hide();
+            priceDisplay.find('.price-range').show();
+            
+            // Show default description
+            descDisplay.find('.variation-desc').hide();
+            descDisplay.find('.default-desc').show();
         }
     });
 
@@ -117,19 +147,19 @@ jQuery(document).ready(function($) {
             cartItems.append(`
                 <tr data-product-id="${item.id}">
                     <td>${item.name}</td>
-                    <td>${item.price.toFixed(2)}</td>
+                    <td>${woocpa_ajax.currency_symbol}${item.price.toFixed(2)}</td>
                     <td>
                         <button class="qty-btn minus">-</button>
                         <span class="quantity">${item.quantity}</span>
                         <button class="qty-btn plus">+</button>
                     </td>
-                    <td>${subtotal.toFixed(2)}</td>
+                    <td>${woocpa_ajax.currency_symbol}${subtotal.toFixed(2)}</td>
                     <td><button class="remove-item">Remove</button></td>
                 </tr>
             `);
         });
         
-        $('#woocpa-cart-total').text(`$${total.toFixed(2)}`);
+        $('#woocpa-cart-total').text(`${woocpa_ajax.currency_symbol}${total.toFixed(2)}`);
     }
 
     // Quantity controls
@@ -150,29 +180,94 @@ jQuery(document).ready(function($) {
     });
 
     // Remove item
-    $(document).on('click', '.remove-item', function() {
+    $(document).on('click', '.qty-btn', function() {
         const row = $(this).closest('tr');
         const productId = row.data('product-id');
+        const isPlus = $(this).hasClass('plus');
         
-        cart = cart.filter(item => item.id !== productId);
-        updateCartDisplay();
+        const item = cart.find(item => item.id === productId);
+        if (item) {
+            if (isPlus) {
+                item.quantity += 1;
+            } else if (item.quantity > 1) {
+                item.quantity -= 1;
+            }
+            updateCartDisplay();
+            
+            // Update WooCommerce cart
+            updateWooCommerceCart();
+        }
     });
+    function updateWooCommerceCart() {
+        $.post(woocpa_ajax.ajax_url, {
+            action: 'woocpa_sync_cart',
+            cart_data: JSON.stringify(cart),
+            nonce: woocpa_ajax.nonce
+        });
+    }
 
     // Proceed to checkout
     $(document).on('click', '.woocpa-proceed-checkout', function() {
         if (cart.length === 0) return;
         
-        // Load checkout form
+        const button = $(this);
+        button.text('Loading Checkout...').prop('disabled', true);
+        
+        // Sync cart and load embedded checkout
         $.post(woocpa_ajax.ajax_url, {
-            action: 'woocpa_load_checkout',
+            action: 'woocpa_load_embedded_checkout',
             cart_data: JSON.stringify(cart),
             nonce: woocpa_ajax.nonce
         }, function(response) {
-            $('#woocpa-checkout-form').html(response.data);
-            showStep(2);
+            if (response.success) {
+                $('#woocpa-checkout-form').html(response.data);
+                showStep(2);
+                button.text('PROCEED WITH THIS BOOKING').prop('disabled', false);
+            } else {
+                alert('Error loading checkout. Please try again.');
+                button.text('PROCEED WITH THIS BOOKING').prop('disabled', false);
+            }
+        }).fail(function() {
+            alert('Network error. Please try again.');
+            button.text('PROCEED WITH THIS BOOKING').prop('disabled', false);
         });
     });
-
+    $(document).on('submit', '.woocommerce-checkout', function(e) {
+        e.preventDefault();
+        
+        const form = $(this);
+        const submitButton = form.find('#place_order');
+        const originalText = submitButton.val();
+        
+        // Show loading state
+        submitButton.val('Processing...').prop('disabled', true);
+        
+        // Serialize form data
+        const formData = form.serialize();
+        
+        // Process checkout via AJAX
+        $.post(woocpa_ajax.ajax_url, {
+            action: 'woocpa_process_embedded_checkout',
+            form_data: formData,
+            nonce: woocpa_ajax.nonce
+        }, function(response) {
+            if (response.success) {
+                // Load thank you page in step 3
+                $('#woocpa-thankyou-content').html(response.data);
+                showStep(3);
+                // Clear local cart
+                cart = [];
+                updateCartDisplay();
+            } else {
+                // Show error message
+                alert('Checkout failed: ' + response.data);
+                submitButton.val(originalText).prop('disabled', false);
+            }
+        }).fail(function() {
+            alert('Network error. Please try again.');
+            submitButton.val(originalText).prop('disabled', false);
+        });
+    });
     // Step navigation
     function showStep(step) {
         $('.woocpa-step-content').hide();
@@ -185,32 +280,5 @@ jQuery(document).ready(function($) {
     }
 
     // Handle checkout form submission
-    $(document).on('submit', '#woocpa-checkout-form', function(e) {
-        e.preventDefault();
-        
-        const formData = $(this).serialize();
-        
-        // Show loading state
-        $('.woocpa-place-order').text('Processing...').prop('disabled', true);
-        
-        $.post(woocpa_ajax.ajax_url, {
-            action: 'woocpa_process_checkout',
-            form_data: formData,
-            cart_data: JSON.stringify(cart),
-            nonce: woocpa_ajax.nonce
-        }, function(response) {
-            if (response.success) {
-                $('#woocpa-thankyou-content').html(response.data);
-                showStep(3);
-                // Clear cart after successful order
-                cart = [];
-            } else {
-                alert('Checkout failed: ' + response.data);
-                $('.woocpa-place-order').text('Place Order').prop('disabled', false);
-            }
-        }).fail(function() {
-            alert('Network error. Please try again.');
-            $('.woocpa-place-order').text('Place Order').prop('disabled', false);
-        });
-    });
+  
 });

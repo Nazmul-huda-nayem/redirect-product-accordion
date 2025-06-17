@@ -3080,37 +3080,72 @@ class WOOCPAAccordionCreatoR extends Widget_Base {
 										
 										echo '<div class="woocpa-prodpriratbtn">';
 											echo '<div class="woocpa-prodpriratwrap">';
-												include(__DIR__.'/common/price.php');
+											echo '<div class="woocpa_product_price" id="price-display-' . $product->get_id() . '">';
+											if ($product->is_type('variable')) {
+												$variations = $product->get_available_variations();
+												$prices = array();
+												
+												foreach ($variations as $variation) {
+													$variation_price = $variation['display_price']; 
+													$prices[] = $variation_price; 
+												}
+												
+												if (!empty($prices)) {
+													$min_price = wc_price(min($prices));
+													$max_price = wc_price(max($prices));
+													echo '<span class="price-range">' . $min_price . ' - ' . $max_price . '</span>';
+													echo '<span class="selected-price" style="display:none;"></span>';
+												} else {
+													echo "No variations price available for this product.";
+												}
+											} else {
+												$regular_price = wc_get_price_to_display($product, array('price' => $product->get_regular_price()));
+												$sale_price = wc_get_price_to_display($product, array('price' => $product->get_sale_price()));
+												
+												$woocpa_regular_price = '<div class="woocpa-regular-price woocpa-sale-price"><del>' . wc_price($regular_price) . '</del></div><div class="woocpa-current-price"> ' . wc_price($sale_price) . '</div>';
+												$woocpa_dis_price = '<div class="woocpa-regular-price"> ' . wc_price($regular_price) . '</div>';
+												$woocpa_sale_check = ($product->is_on_sale()) ? $woocpa_regular_price : $woocpa_dis_price;
+												$woocpa_regu_check = ($regular_price) ? $woocpa_sale_check : '';
+												echo $woocpa_regu_check;
+											}
+											echo '</div>';
+											if ($product->is_type('variable')) {
+												echo '<div class="woocpa-variation-description" id="desc-display-' . $product->get_id() . '">';
+													echo '<div class="default-desc" style="display:none;">' . $product->get_description() . '</div>';
+													echo '<div class="variation-desc" style="display:none;"></div>';
+												echo '</div>';
+											}
 												include(__DIR__.'/common/review.php');
 											echo '</div>';
 											echo '<div class="woocpa-prodOptInfo">';
 									
-									if ($product->is_type('variable')) {
-										// For variable products, show variation selector
-										$variations = $product->get_available_variations();
-										if (!empty($variations)) {
-											echo '<select class="woocpa-variation-select" data-product-id="' . $product->get_id() . '">';
-											echo '<option value="">Choose an option</option>';
-											foreach ($variations as $variation) {
-												$variation_obj = wc_get_product($variation['variation_id']);
-												$price = $variation_obj->get_price();
-												$attributes = [];
-												foreach ($variation['attributes'] as $attr_name => $attr_value) {
-													$attributes[] = $attr_value;
+											if ($product->is_type('variable')) {
+												// For variable products, show variation selector
+												$variations = $product->get_available_variations();
+												if (!empty($variations)) {
+													echo '<select class="woocpa-variation-select" data-product-id="' . $product->get_id() . '">';
+													echo '<option value="">Choose an option</option>';
+													foreach ($variations as $variation) {
+														$variation_obj = wc_get_product($variation['variation_id']);
+														$price = $variation_obj->get_price();
+														$description = $variation_obj->get_description();
+														$attributes = [];
+														foreach ($variation['attributes'] as $attr_name => $attr_value) {
+															$attributes[] = wc_attribute_label(str_replace('attribute_', '', $attr_name)) . ': ' . $attr_value;
+														}
+														$option_text = implode(', ', $attributes);
+														echo '<option value="' . $variation['variation_id'] . '" data-price="' . $price . '" data-description="' . esc_attr($description) . '">' . $option_text . '</option>';
+													}
+													echo '</select>';
 												}
-												$option_text = implode(', ', $attributes) . ' - ' . wc_price($price);
-												echo '<option value="' . $variation['variation_id'] . '" data-price="' . $price . '">' . $option_text . '</option>';
+												echo '<button class="woocpa-add-to-cart woocpa-add-variation" data-product-id="' . $product->get_id() . '" data-product-name="' . esc_attr($product->get_name()) . '" data-is-variable="true">Add to Cart</button>';
+											} else {
+												// For simple products
+												echo '<button class="woocpa-add-to-cart" data-product-id="' . $product->get_id() . '" data-product-name="' . esc_attr($product->get_name()) . '" data-product-price="' . $product->get_price() . '" data-is-variable="false">Add to Cart</button>';
 											}
-											echo '</select>';
-										}
-										echo '<button class="woocpa-add-to-cart woocpa-add-variation woocpa-cartBtn" data-product-id="' . $product->get_id() . '" data-product-name="' . esc_attr($product->get_name()) . '" data-is-variable="true">Add to Cart</button>';
-									} else {
-										// For simple products
-										echo '<button class="woocpa-add-to-cart woocpa-cartBtn" data-product-id="' . $product->get_id() . '" data-product-name="' . esc_attr($product->get_name()) . '" data-product-price="' . $product->get_price() . '" data-is-variable="false">Add to Cart</button>';
-									}
-									
-									echo '</div>';
-								echo '</div>';
+											
+											echo '</div>';
+										echo '</div>';
 										
 										echo '<div class="woocpa-prodOptInfo">';
 											if('yes' === $woocpa_sale) {
@@ -3150,7 +3185,7 @@ class WOOCPAAccordionCreatoR extends Widget_Base {
 				echo '</div>';
 		
 				// Cart Table
-				echo '<div class="woocpa-cart-section" style="display:none;">';
+				echo '<div class="woocpa-cart-section">';
 					echo '<div class="woocpa-cart-header">Your Booking Overview</div>';
 					echo '<table class="woocpa-cart-table">';
 						echo '<thead>';
